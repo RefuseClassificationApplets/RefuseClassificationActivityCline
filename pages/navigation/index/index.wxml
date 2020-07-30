@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" class="swiper"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" class="swiper-item"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="content">
+    <view class="siji" bindtap="openUrl" data-type="1">
+      <view class="hz-l">
+        <image src="/common/image/df.jpg"></image>
+        <view class="hz-ll">
+          <view class="title">我要打卡</view>
+          <view class="desc">据说连续打卡<text>21天</text>可以养成一个好习惯~</view>
+        </view>
+      </view>
+      <view class="hz-r">打卡 ></view>
+    </view>
+
+  </view>
+</view>

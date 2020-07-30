@@ -1,0 +1,43 @@
+<view>
+
+  <view class="cityselect" wx:if="{{qishow||zhongshow}}">
+    <view class="province">
+      <scroll-view class="sc-province" style="height:{{scheight}}px" scroll-y="true" scroll-into-view="p{{toViewp}}" scroll-top="{{scrollTop}}">
+
+        <block wx:for="{{province}}">
+        <view  id="p{{item[0]}}" bindtap="chooseProvince" data-index="{{item[0]}}" class="scroll-view-item {{item[0] == toViewp?'on':''}}">{{item[1]}}</view>
+        </block>
+
+      </scroll-view>
+    </view>
+    <view class="citys">
+      <scroll-view scroll-y="true" style="height:{{scheight}}px" scroll-into-view="{{toViewc}}">
+
+        <block wx:for="{{city}}">
+        <view  id="c{{item[0]}}" bindtap="chooseCity" data-name="{{item[1]}}" class="scroll-view-item">{{item[1]}}</view>
+        </block>
+
+      </scroll-view>
+    </view>
+  </view>
+  
+  <!-- 列表（此处静态，后期改为动态获取） -->
+  <view class="hy-lists" wx:for="{{[1,1,1,1,1,1]}}">
+    <view class="hy-lists-lt">
+      <image src="/common/image/df.jpg"></image>
+      <view class="hy-lists-lt-info">
+        <view class="hy-yq-tit">Book思议</view>
+        <view class="hy-yq-c">北京</view>
+        <view class="hy-yq">今天别忘了垃圾分类哦~</view>
+        <image class="hy-vip" src="/common/image/vip.png"></image>
+        <view class="hy-user-cj">已打卡21天 热度3192</view>
+      </view>
+    </view>
+    <view class="hy-lists-rt">
+      <view class="hy-shijian">8小时前</view>
+      <view class="hy-lxr">
+        <text class="hy-lxr-tit">点击查看-></text>
+      </view>
+    </view>
+  </view>
+</view>
