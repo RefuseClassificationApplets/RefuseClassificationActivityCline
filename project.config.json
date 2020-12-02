@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"scopeDataCheck": false,
 		"coverView": true,
 		"es6": true,
@@ -32,8 +32,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx9339101bec46ec12",
-	"projectname": "lajifenlei",
+	"appid": "wx763bfdaed4e8126c",
+	"projectname": "RefuseClassificationActivityCline",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

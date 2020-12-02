@@ -1,26 +1,36 @@
 <view class="container">
-  <view class="banner">
-    <swiper indicator-dots="{{indicatorDots}}" class="swiper"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{background}}" wx:key="*this">
-        <swiper-item>
-          <image src="{{item}}" class="swiper-item"></image>
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
+	<view class="banner">
+		<swiper indicator-dots="{{indicatorDots}}" class="swiper" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+			<block wx:for="{{background}}" wx:key="*this">
+				<swiper-item>
+					<image src="{{item}}" class="swiper-item"></image>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
 
-  <view class="content">
-    <view class="siji" bindtap="openUrl" data-type="1">
-      <view class="hz-l">
-        <image src="/common/image/df.jpg"></image>
-        <view class="hz-ll">
-          <view class="title">我要打卡</view>
-          <view class="desc">据说连续打卡<text>21天</text>可以养成一个好习惯~</view>
+	<view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image wx:if="{{theme === 'dark'}}" class="kind-list-img" src="resources/kind/{{item.id}}_dark.png"></image>
+            <image wx:else class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <view bindtap="jump" data-text='    {{page.text}}' class="navigator">
+                  <view class="navigator-text">{{page.name}}</view>
+                  <view class="navigator-arrow"></view>
+                </view>
+              </block>
+            </view>
+          </view>
         </view>
-      </view>
-      <view class="hz-r">打卡 ></view>
+      </block>
     </view>
-
   </view>
+  
 </view>

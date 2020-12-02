@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-searchbar": "../../../common/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "搜索垃圾~"
 }
